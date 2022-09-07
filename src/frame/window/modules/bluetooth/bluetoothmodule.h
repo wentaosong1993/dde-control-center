@@ -44,8 +44,6 @@ private:
     void initSearchData() override;
 
 public Q_SLOTS:
-    void showPinCode(const QDBusObjectPath &device, const QString &code);
-    void closePinCode(const QDBusObjectPath &device);
     void showDeviceDetail(const dcc::bluetooth::Adapter *adapter, const dcc::bluetooth::Device *device);
     void popPage();
 
@@ -53,7 +51,6 @@ private:
     BluetoothWidget *m_bluetoothWidget;
     dcc::bluetooth::BluetoothModel *m_bluetoothModel;
     dcc::bluetooth::BluetoothWorker *m_bluetoothWorker;
-    QMap<QDBusObjectPath, dcc::bluetooth::PinCodeDialog *> m_dialogs;
 };
 }
 }

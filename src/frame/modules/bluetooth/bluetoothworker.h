@@ -35,7 +35,6 @@ public:
 
 Q_SIGNALS:
     void deviceEnableChanged();
-    void requestConfirmation(const QDBusObjectPath &path, const QString &code);
     void pinCodeCancel(const QDBusObjectPath &device);
 
 public Q_SLOTS:
@@ -78,7 +77,6 @@ private:
     DBusBluetooth *m_bluetoothInter;
     DBusAirplaneMode *m_airPlaneModeInter;
     BluetoothModel *m_model;
-    QMap<QString, QPointer<PinCodeDialog>> m_dialogs;
     bool m_connectingAudioDevice;
     uint m_state;
     QTimer *m_powerSwitchTimer;

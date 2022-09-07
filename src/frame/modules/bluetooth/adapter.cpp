@@ -46,6 +46,8 @@ void Adapter::removeDevice(const QString &deviceId)
     if (device) {
         m_devicesId.removeOne(deviceId);
         m_devices.remove(deviceId);
+        delete device;
+
         Q_EMIT deviceRemoved(deviceId);
     }
 }
